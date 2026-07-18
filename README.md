@@ -1,6 +1,6 @@
-# By Ari Cookies
+# By Ari
 
-Site institucional da **By Ari Cookies** — cookies artesanais e gourmet em **Aracaju, Sergipe**.
+Site institucional da **By Ari** — cookies artesanais e gourmet em **Aracaju, Sergipe**.
 
 ## Stack
 
@@ -46,13 +46,20 @@ Edite o arquivo `src/data/flavors.ts` e inclua um objeto no array `flavors`:
 
 No mesmo arquivo `src/data/flavors.ts`, atualize o objeto `brand`:
 
-- `whatsapp` — número com DDI (ex.: `5579999999999`)
+- `whatsapp` — número com DDI (ex.: `5533998561413`)
+- `whatsappDisplay` — como aparece no site
 - `instagram` — usuário sem `@`
-- `email`
 
 ## Deploy
 
 Pode publicar em **Vercel**, **Netlify** ou **GitHub Pages** a partir deste repositório.
+
+### SEO após o deploy
+
+1. Atualize `brand.siteUrl` em `src/data/flavors.ts` com o domínio real.
+2. Atualize as URLs em `index.html` (canonical, Open Graph), `public/robots.txt` e `public/sitemap.xml`.
+3. Cadastre o site no [Google Search Console](https://search.google.com/search-console) e envie o sitemap.
+4. Crie/otimize o **Google Meu Negócio** da By Ari em Aracaju (forte para SEO local).
 
 ## Sabores atuais
 
