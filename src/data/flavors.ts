@@ -75,6 +75,16 @@ export const flavors: Flavor[] = [
   },
 ]
 
+/** URL pública — preenchida no build (Vercel) via VITE_SITE_URL / VERCEL_* */
+export function getSiteUrl(): string {
+  const fromEnv = import.meta.env.VITE_SITE_URL as string | undefined
+  if (fromEnv) return fromEnv.replace(/\/$/, '')
+  if (typeof window !== 'undefined' && window.location?.origin) {
+    return window.location.origin
+  }
+  return 'https://byari.com.br'
+}
+
 export const brand = {
   name: 'By Ari',
   tagline: 'Cookies artesanais & gourmet',
@@ -82,8 +92,13 @@ export const brand = {
   state: 'Sergipe',
   stateCode: 'SE',
   country: 'BR',
-  /** Atualize com o domínio real após o deploy (ex.: https://byari.com.br) */
-  siteUrl: 'https://byari.com.br',
+  /**
+   * Preferir getSiteUrl() em runtime.
+   * Mantido para compatibilidade; no build da Vercel usa a URL do deploy.
+   */
+  get siteUrl() {
+    return getSiteUrl()
+  },
   /** Somente dígitos, com DDI 55 */
   whatsapp: '5533998296730',
   whatsappDisplay: '(33) 99829-6730',

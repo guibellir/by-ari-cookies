@@ -1,8 +1,14 @@
-import { brand, faqItems, flavors, testimonials } from '../data/flavors'
+import {
+  brand,
+  faqItems,
+  flavors,
+  getSiteUrl,
+  testimonials,
+} from '../data/flavors'
 
 /** JSON-LD para LocalBusiness + Menu + FAQ (SEO local) */
 export function buildStructuredData() {
-  const site = brand.siteUrl.replace(/\/$/, '')
+  const site = getSiteUrl()
   const availableFlavors = flavors.filter((f) => f.available !== false)
 
   const localBusiness = {
