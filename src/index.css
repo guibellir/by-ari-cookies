@@ -498,9 +498,8 @@ ul {
 
 .flavor-media.has-photo {
   /*
-    Quase quadrado preenche o card de forma premium no mobile.
-    As fotos são 3:4 com bastante “esteira” ao redor do prato —
-    cover + leve zoom corta só o fundo e mantém o cookie no centro.
+    Quadro 1:1 no mobile. Fotos têm muita esteira + prato grande;
+    cover + zoom forte aproxima o cookie e preenche o card de forma “gourmet”.
   */
   aspect-ratio: 1 / 1;
   min-height: 0;
@@ -511,15 +510,20 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 48%;
-  /* Aproxima o cookie (as fotos têm margem generosa de fundo) */
-  transform: scale(1.14);
+  /* Foco no cookie (centro do prato) */
+  object-position: center 50%;
+  /*
+    Zoom ~1.55 corta a esteira e parte da borda do prato,
+    deixando o cookie grande e central no card (como no print).
+  */
+  transform: scale(1.55);
   transform-origin: center center;
   transition: transform 0.45s ease;
+  will-change: transform;
 }
 
 .flavor-card:hover .flavor-photo {
-  transform: scale(1.2);
+  transform: scale(1.62);
 }
 
 .flavor-media .emoji {
@@ -969,17 +973,17 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Desktop: um pouco mais alto, cookie ainda preenchendo o quadro */
+  /* Desktop: um pouco mais alto, mesmo enquadramento próximo do cookie */
   .flavor-media.has-photo {
     aspect-ratio: 4 / 5;
   }
 
   .flavor-photo {
-    transform: scale(1.1);
+    transform: scale(1.42);
   }
 
   .flavor-card:hover .flavor-photo {
-    transform: scale(1.16);
+    transform: scale(1.48);
   }
 
   .testimonial-grid {
@@ -1021,11 +1025,12 @@ ul {
 
   .flavor-photo {
     object-fit: cover;
-    object-position: center 48%;
-    transform: scale(1.16);
+    object-position: center 50%;
+    /* Mobile: cookie bem presente no card (corta esteira / borda do prato) */
+    transform: scale(1.58);
   }
 
   .flavor-card:hover .flavor-photo {
-    transform: scale(1.16); /* sem zoom extra no toque */
+    transform: scale(1.58); /* sem zoom extra no toque */
   }
 }
