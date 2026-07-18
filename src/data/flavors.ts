@@ -12,8 +12,13 @@ export type Flavor = {
   accent: string
   /** Gradiente de fundo do card (fallback se não houver foto) */
   gradient: string
-  /** Foto do cookie em /public/images */
+  /** Foto do cookie em /public/images (desktop / padrão) */
   image?: string
+  /**
+   * Versão quadrada, centrada no prato+cookie, otimizada para cards mobile.
+   * Se omitida, o site usa `image`.
+   */
+  imageMobile?: string
   /** Texto alternativo da foto (SEO + acessibilidade) */
   imageAlt?: string
   /** Emoji ou símbolo decorativo (fallback) */
@@ -35,6 +40,7 @@ export const flavors: Flavor[] = [
     accent: '#8B2942',
     gradient: 'linear-gradient(145deg, #5c1a2e 0%, #8B2942 45%, #c45c6a 100%)',
     image: '/images/cookie-red-velvet-aracaju.jpg',
+    imageMobile: '/images/cookie-red-velvet-aracaju-mobile.jpg',
     imageAlt:
       'Cookie red velvet artesanal By Ari com chocolate branco — Aracaju, Sergipe',
     emoji: '❤️',
@@ -52,6 +58,7 @@ export const flavors: Flavor[] = [
     accent: '#3D2314',
     gradient: 'linear-gradient(145deg, #1a100a 0%, #3D2314 40%, #6B4423 100%)',
     image: '/images/cookie-double-chocolate-aracaju.jpg',
+    imageMobile: '/images/cookie-double-chocolate-aracaju-mobile.jpg',
     imageAlt:
       'Cookie double chocolate artesanal By Ari com chocolate meio amargo — Aracaju, SE',
     emoji: '🍫',
@@ -68,6 +75,7 @@ export const flavors: Flavor[] = [
     accent: '#C4A35A',
     gradient: 'linear-gradient(145deg, #6B4423 0%, #A67C52 50%, #C4A35A 100%)',
     image: '/images/cookie-tradicional-aracaju.jpg',
+    imageMobile: '/images/cookie-tradicional-aracaju-mobile.jpg',
     imageAlt:
       'Cookie tradicional artesanal By Ari com gotas de chocolate — Aracaju, Sergipe',
     emoji: '🍪',

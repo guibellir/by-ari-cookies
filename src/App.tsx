@@ -225,18 +225,26 @@ function App() {
                         <span className="flavor-badge">{flavor.badge}</span>
                       )}
                       {flavor.image ? (
-                        <img
-                          src={flavor.image}
-                          alt={
-                            flavor.imageAlt ??
-                            `Cookie ${flavor.name} artesanal By Ari em Aracaju`
-                          }
-                          className="flavor-photo"
-                          loading="lazy"
-                          width={1086}
-                          height={1448}
-                          decoding="async"
-                        />
+                        <picture>
+                          {flavor.imageMobile ? (
+                            <source
+                              media="(max-width: 719px)"
+                              srcSet={flavor.imageMobile}
+                            />
+                          ) : null}
+                          <img
+                            src={flavor.image}
+                            alt={
+                              flavor.imageAlt ??
+                              `Cookie ${flavor.name} artesanal By Ari em Aracaju`
+                            }
+                            className="flavor-photo"
+                            loading="lazy"
+                            width={1100}
+                            height={1100}
+                            decoding="async"
+                          />
+                        </picture>
                       ) : (
                         <span
                           className="emoji"

@@ -497,33 +497,27 @@ ul {
 }
 
 .flavor-media.has-photo {
-  /*
-    Quadro 1:1 no mobile. Fotos têm muita esteira + prato grande;
-    cover + zoom forte aproxima o cookie e preenche o card de forma “gourmet”.
-  */
+  /* Default / mobile: quadro quadrado — casa com as fotos *-mobile.jpg */
   aspect-ratio: 1 / 1;
   min-height: 0;
   max-height: none;
 }
 
+.flavor-media picture {
+  display: contents;
+}
+
 .flavor-photo {
   width: 100%;
   height: 100%;
+  /* Sem transform/scale: o enquadramento vem da foto (mobile crop) ou do object-position */
   object-fit: cover;
-  /* Foco no cookie (centro do prato) */
-  object-position: center 50%;
-  /*
-    Zoom ~1.55 corta a esteira e parte da borda do prato,
-    deixando o cookie grande e central no card (como no print).
-  */
-  transform: scale(1.55);
-  transform-origin: center center;
+  object-position: center center;
   transition: transform 0.45s ease;
-  will-change: transform;
 }
 
 .flavor-card:hover .flavor-photo {
-  transform: scale(1.62);
+  transform: scale(1.04);
 }
 
 .flavor-media .emoji {
@@ -973,17 +967,19 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Desktop: um pouco mais alto, mesmo enquadramento próximo do cookie */
+  /* Desktop: foto original (retrato), enquadrada e centrada no prato */
   .flavor-media.has-photo {
     aspect-ratio: 4 / 5;
   }
 
   .flavor-photo {
-    transform: scale(1.42);
+    object-fit: cover;
+    object-position: center 46%;
+    transform: none;
   }
 
   .flavor-card:hover .flavor-photo {
-    transform: scale(1.48);
+    transform: scale(1.04);
   }
 
   .testimonial-grid {
@@ -1023,14 +1019,14 @@ ul {
     aspect-ratio: 1 / 1;
   }
 
+  /* Mobile usa *-mobile.jpg (já centrada no prato) — sem scale que desloca o corte */
   .flavor-photo {
     object-fit: cover;
-    object-position: center 50%;
-    /* Mobile: cookie bem presente no card (corta esteira / borda do prato) */
-    transform: scale(1.58);
+    object-position: center center;
+    transform: none;
   }
 
   .flavor-card:hover .flavor-photo {
-    transform: scale(1.58); /* sem zoom extra no toque */
+    transform: none;
   }
 }
