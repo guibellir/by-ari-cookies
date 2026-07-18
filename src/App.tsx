@@ -233,8 +233,9 @@ function App() {
                           }
                           className="flavor-photo"
                           loading="lazy"
-                          width={800}
-                          height={1000}
+                          width={1086}
+                          height={1448}
+                          decoding="async"
                         />
                       ) : (
                         <span
