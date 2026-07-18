@@ -171,7 +171,7 @@ export const blogPosts: BlogPost[] = [
       'Não existe um único “melhor cookie em Aracaju” — existe o melhor para o seu momento. Veja como escolher entre os sabores By Ari.',
     image: '/images/blog/cookie-escolher-hero.jpg',
     imageAlt:
-      'Cookies coloridos e gourmet para escolher o sabor ideal — Aracaju',
+      'Pilha de cookies com chocolate derretendo — escolha o sabor ideal em Aracaju',
     body: [
       {
         type: 'p',
