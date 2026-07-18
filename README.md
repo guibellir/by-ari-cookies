@@ -42,17 +42,21 @@ A URL do site (canonical, Open Graph, sitemap, schema) é resolvida automaticame
 1. `VITE_SITE_URL` (se definida)
 2. Domínio de produção da Vercel (`VERCEL_PROJECT_PRODUCTION_URL`)
 3. URL do deploy (`VERCEL_URL`)
-4. Fallback: `https://byari.com.br`
+4. Fallback / produção: `https://byari.shop`
 
-### Domínio próprio (opcional)
+### Domínio: byari.shop
 
-No painel da Vercel → Project → Settings → Environment Variables:
+O projeto já está configurado para **https://byari.shop** (`.env.production` + fallbacks).
 
-```
-VITE_SITE_URL=https://seudominio.com.br
-```
+Na Vercel:
 
-Depois faça um **redeploy**.
+1. **Settings → Domains** → adicione `byari.shop` (e `www.byari.shop` se quiser)
+2. Configure o DNS no registrador conforme a Vercel indicar
+3. (Recomendado) **Environment Variables → Production:**
+   ```
+   VITE_SITE_URL=https://byari.shop
+   ```
+4. Redeploy após apontar o domínio
 
 ### CLI
 

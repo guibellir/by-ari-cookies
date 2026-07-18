@@ -24,7 +24,7 @@ function resolveSiteUrl(env: Record<string, string>): string {
     return `https://${host}`
   }
 
-  return 'https://byari.com.br'
+  return 'https://byari.shop'
 }
 
 function seoFilesPlugin(siteUrl: string): Plugin {

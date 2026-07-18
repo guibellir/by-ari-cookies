@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Atualize a URL do sitemap após o deploy com o domínio real
-Sitemap: https://byari.com.br/sitemap.xml
+Sitemap: https://byari.shop/sitemap.xml

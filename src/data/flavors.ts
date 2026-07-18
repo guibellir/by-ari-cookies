@@ -82,7 +82,7 @@ export function getSiteUrl(): string {
   if (typeof window !== 'undefined' && window.location?.origin) {
     return window.location.origin
   }
-  return 'https://byari.com.br'
+  return 'https://byari.shop'
 }
 
 export const brand = {
