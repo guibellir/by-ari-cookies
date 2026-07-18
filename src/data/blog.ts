@@ -52,9 +52,9 @@ export const blogPosts: BlogPost[] = [
     tags: ['Aracaju', 'Cookie artesanal', 'Guia'],
     excerpt:
       'Se você busca cookie artesanal em Aracaju, saiba o que diferencia o feito à mão do industrializado e como pedir na By Ari.',
-    image: '/images/cookie-red-velvet-aracaju-mobile.jpg',
+    image: '/images/blog/cookie-artesanal-hero.jpg',
     imageAlt:
-      'Cookie red velvet artesanal By Ari em prato branco — Aracaju, Sergipe',
+      'Cookies artesanais com gotas de chocolate em estilo gourmet — Aracaju, Sergipe',
     body: [
       {
         type: 'p',
@@ -111,9 +111,9 @@ export const blogPosts: BlogPost[] = [
     tags: ['Sergipe', 'Aracaju', 'Cookie gourmet'],
     excerpt:
       'De Aracaju para quem pesquisa cookie em Sergipe: um guia prático de sabores, pedidos e o que torna o cookie By Ari diferente.',
-    image: '/images/cookie-double-chocolate-aracaju-mobile.jpg',
+    image: '/images/blog/cookie-sergipe-hero.jpg',
     imageAlt:
-      'Cookie double chocolate artesanal By Ari — cookie em Sergipe, Aracaju',
+      'Cookies de chocolate empilhados — cookie artesanal em Sergipe e Aracaju',
     body: [
       {
         type: 'p',
@@ -169,9 +169,9 @@ export const blogPosts: BlogPost[] = [
     tags: ['Aracaju', 'Sabores', 'Dicas'],
     excerpt:
       'Não existe um único “melhor cookie em Aracaju” — existe o melhor para o seu momento. Veja como escolher entre os sabores By Ari.',
-    image: '/images/cookie-tradicional-aracaju-mobile.jpg',
+    image: '/images/blog/cookie-escolher-hero.jpg',
     imageAlt:
-      'Cookie tradicional artesanal By Ari com gotas de chocolate — Aracaju',
+      'Cookies coloridos e gourmet para escolher o sabor ideal — Aracaju',
     body: [
       {
         type: 'p',

@@ -34,7 +34,7 @@ export function BlogPage() {
         title={`Blog | Cookie artesanal em ${brand.city} e ${brand.state} — ${brand.name}`}
         description={`Dicas e guias da ${brand.name}: cookie artesanal em ${brand.city}, cookie em ${brand.state}, sabores e como pedir.`}
         path="/blog"
-        image="/images/cookie-red-velvet-aracaju-mobile.jpg"
+        image="/images/blog/cookie-artesanal-hero.jpg"
         imageAlt={`Cookie artesanal By Ari em ${brand.city}`}
       />
       <JsonLd data={collectionSchema} />
@@ -73,8 +73,8 @@ export function BlogPage() {
                         src={post.image}
                         alt={post.imageAlt ?? post.title}
                         loading="lazy"
-                        width={600}
-                        height={600}
+                        width={1400}
+                        height={800}
                         decoding="async"
                       />
                     </Link>

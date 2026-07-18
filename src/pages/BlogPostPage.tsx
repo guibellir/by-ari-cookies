@@ -163,8 +163,8 @@ export function BlogPostPage() {
                 <img
                   src={post.image}
                   alt={post.imageAlt ?? post.title}
-                  width={1100}
-                  height={1100}
+                  width={1400}
+                  height={800}
                   decoding="async"
                 />
               </figure>
@@ -214,8 +214,8 @@ export function BlogPostPage() {
                           src={p.image}
                           alt={p.imageAlt ?? p.title}
                           loading="lazy"
-                          width={600}
-                          height={600}
+                          width={1400}
+                          height={800}
                           decoding="async"
                         />
                       </Link>
