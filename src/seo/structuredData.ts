@@ -18,7 +18,7 @@ export function buildStructuredData() {
     name: brand.name,
     alternateName: 'By Ari Cookies',
     description:
-      'Cookies artesanais e gourmet em Aracaju, Sergipe. Sabores Red Velvet, Double Chocolate e Tradicional. Peça pelo WhatsApp ou iFood.',
+      'Cookie artesanal e gourmet em Aracaju, Sergipe. Sabores Red Velvet, Double Chocolate e Tradicional. Peça cookie em Sergipe pelo WhatsApp ou iFood.',
     url: site,
     image: `${site}/images/logo.png`,
     logo: `${site}/images/logo.png`,

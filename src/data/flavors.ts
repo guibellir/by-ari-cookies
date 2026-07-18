@@ -164,6 +164,16 @@ export const faqItems = [
       'Você pode pedir pelo WhatsApp ou pelo iFood. No WhatsApp, escolha os sabores e a quantidade; no iFood, a loja By Ari — Cookies está disponível para delivery em Aracaju-SE.',
   },
   {
+    question: 'Onde comprar cookie artesanal em Aracaju?',
+    answer:
+      'Na By Ari você compra cookie artesanal em Aracaju sob demanda: WhatsApp para encomendas e combinações de entrega/retirada, ou iFood para delivery na cobertura da plataforma. Os sabores são Red Velvet, Double Chocolate e Tradicional.',
+  },
+  {
+    question: 'A By Ari faz cookie em Sergipe (além de Aracaju)?',
+    answer:
+      'Nossa base é Aracaju, Sergipe. Atendemos a capital com foco em frescor e produção artesanal. Para bairros e regiões, confira a cobertura no iFood ou combine pelo WhatsApp.',
+  },
+  {
     question: 'Quais sabores de cookie a By Ari tem?',
     answer:
       'No momento oferecemos três sabores artesanais: Red Velvet (massa amanteigada de baunilha e cacau com chocolate branco), Double Chocolate (massa de cacau com chocolate meio amargo) e Tradicional (manteiga, baunilha e gotas de chocolate). Novos sabores podem chegar em breve.',

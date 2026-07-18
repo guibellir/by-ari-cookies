@@ -80,8 +80,24 @@ No mesmo arquivo `src/data/flavors.ts`, atualize o objeto `brand`:
 
 ## SEO após o deploy
 
-1. Cadastre o site no [Google Search Console](https://search.google.com/search-console) e envie `https://SEU-DOMINIO/sitemap.xml`
+1. Cadastre o site no [Google Search Console](https://search.google.com/search-console) e envie `https://byari.shop/sitemap.xml`
 2. Crie/otimize o **Google Meu Negócio** da By Ari em Aracaju
+3. Peça indexação das URLs `/blog` e dos artigos em **Inspecionar URL**
+
+## Blog (SEO local)
+
+Artigos ficam em `src/data/blog.ts`. Rotas:
+
+- `/blog` — lista
+- `/blog/seu-slug` — artigo
+
+### Publicar um post novo (ex.: semanal)
+
+1. Adicione um objeto em `blogPosts` em `src/data/blog.ts` (slug, title, description, date, body)
+2. Inclua o slug em `BLOG_SLUGS` em `vite.config.ts` (para o sitemap no build)
+3. Commit + push
+
+Foque **1 palavra-chave** por artigo (ex.: “cookie artesanal em Aracaju”) e use a cidade de forma natural.
 
 ## Sabores atuais
 
