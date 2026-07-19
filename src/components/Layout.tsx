@@ -1,5 +1,5 @@
-import { useEffect, useState, type ReactNode } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useEffect, useState, type MouseEvent, type ReactNode } from 'react'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { brand } from '../data/flavors'
 import { whatsappLink } from '../lib/whatsapp'
 
@@ -11,6 +11,7 @@ export function Layout({ children }: LayoutProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -27,13 +28,34 @@ export function Layout({ children }: LayoutProps) {
   const closeMenu = () => setMenuOpen(false)
   const isHome = location.pathname === '/'
 
+  /** Logo / "by Ari": sempre volta à home no topo (mesmo se já estiver nela). */
+  const goHomeTop = (event: MouseEvent<HTMLAnchorElement>) => {
+    closeMenu()
+
+    if (isHome) {
+      event.preventDefault()
+      if (location.hash) {
+        navigate('/', { replace: true })
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+
+    // Em outras páginas o <Link> navega para / e o effect rola ao topo
+  }
+
   const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`)
 
   return (
     <>
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container header-inner">
-          <Link to="/" className="logo" onClick={closeMenu}>
+          <Link
+            to="/"
+            className="logo"
+            onClick={goHomeTop}
+            aria-label="Ir para o início — By Ari"
+          >
             <img
               src="/images/logo.png"
               alt="By Ari — cookies artesanais e gourmet em Aracaju, Sergipe"
