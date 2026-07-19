@@ -45,6 +45,154 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ——— Scroll reveal (Intersection Observer) ——— */
+.reveal {
+  --reveal-distance: 1.75rem;
+  --reveal-duration: 0.7s;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease);
+}
+
+.reveal-up {
+  transform: translate3d(0, var(--reveal-distance), 0);
+}
+
+.reveal-down {
+  transform: translate3d(0, calc(var(--reveal-distance) * -1), 0);
+}
+
+.reveal-left {
+  transform: translate3d(calc(var(--reveal-distance) * -1), 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(var(--reveal-distance), 0, 0);
+}
+
+.reveal-scale {
+  transform: scale(0.94);
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Wrappers em grids: preenchem a célula e repassam altura ao card */
+.flavor-grid > .reveal,
+.testimonial-grid > .reveal,
+.blog-grid > .reveal,
+.feature-list > .reveal,
+.faq-list > .reveal {
+  height: 100%;
+  min-width: 0;
+}
+
+.flavor-grid > .reveal > .flavor-card,
+.testimonial-grid > .reveal > .testimonial-card,
+.blog-grid > .reveal > .blog-card,
+.feature-list > .reveal > .feature,
+.faq-list > .reveal > .faq-item {
+  height: 100%;
+}
+
+/* Hero: entrada no carregamento (sempre no topo) */
+.hero-reveal {
+  opacity: 0;
+  animation: hero-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-reveal-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.hero-reveal-delay-2 {
+  animation-delay: 0.18s;
+}
+
+.hero-reveal-delay-3 {
+  animation-delay: 0.28s;
+}
+
+.hero-reveal-delay-4 {
+  animation-delay: 0.38s;
+}
+
+.hero-reveal-visual {
+  opacity: 0;
+  animation: hero-visual-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-visual-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Mobile: movimento um pouco mais marcado e suave */
+@media (max-width: 719px) {
+  .reveal {
+    --reveal-distance: 2.15rem;
+    --reveal-duration: 0.75s;
+  }
+
+  .hero-reveal,
+  .hero-reveal-visual {
+    animation-duration: 0.9s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-reveal,
+  .hero-reveal-visual {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .hero-logo-wrap,
+  .floating-chip.one,
+  .floating-chip.two,
+  .floating-chip.three {
+    animation: none !important;
+  }
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;

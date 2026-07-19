@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { brand, getSiteUrl } from '../data/flavors'
 import { formatPostDate, getSortedPosts } from '../data/blog'
 import { Seo, JsonLd } from '../components/Seo'
+import { Reveal } from '../components/Reveal'
 
 export function BlogPage() {
   const posts = getSortedPosts()
@@ -62,41 +63,43 @@ export function BlogPage() {
         <section className="section">
           <div className="container">
             <div className="blog-grid blog-grid-page">
-              {posts.map((post) => (
-                <article key={post.slug} className="blog-card">
-                  {post.image && (
-                    <Link
-                      to={`/blog/${post.slug}`}
-                      className="blog-card-media"
-                    >
-                      <img
-                        src={post.image}
-                        alt={post.imageAlt ?? post.title}
-                        loading="lazy"
-                        width={1400}
-                        height={800}
-                        decoding="async"
-                      />
-                    </Link>
-                  )}
-                  <div className="blog-card-body">
-                    <div className="blog-card-meta">
-                      <time dateTime={post.date}>
-                        {formatPostDate(post.date)}
-                      </time>
-                      <span className="blog-card-tags">
-                        {post.tags.slice(0, 2).join(' · ')}
-                      </span>
+              {posts.map((post, index) => (
+                <Reveal key={post.slug} delay={index % 6}>
+                  <article className="blog-card">
+                    {post.image && (
+                      <Link
+                        to={`/blog/${post.slug}`}
+                        className="blog-card-media"
+                      >
+                        <img
+                          src={post.image}
+                          alt={post.imageAlt ?? post.title}
+                          loading="lazy"
+                          width={1400}
+                          height={800}
+                          decoding="async"
+                        />
+                      </Link>
+                    )}
+                    <div className="blog-card-body">
+                      <div className="blog-card-meta">
+                        <time dateTime={post.date}>
+                          {formatPostDate(post.date)}
+                        </time>
+                        <span className="blog-card-tags">
+                          {post.tags.slice(0, 2).join(' · ')}
+                        </span>
+                      </div>
+                      <h2>
+                        <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                      </h2>
+                      <p>{post.excerpt}</p>
+                      <Link to={`/blog/${post.slug}`} className="blog-card-link">
+                        Ler artigo →
+                      </Link>
                     </div>
-                    <h2>
-                      <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                    </h2>
-                    <p>{post.excerpt}</p>
-                    <Link to={`/blog/${post.slug}`} className="blog-card-link">
-                      Ler artigo →
-                    </Link>
-                  </div>
-                </article>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
