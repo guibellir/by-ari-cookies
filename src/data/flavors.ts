@@ -108,8 +108,8 @@ export const brand = {
     return getSiteUrl()
   },
   /** Somente dígitos, com DDI 55 */
-  whatsapp: '5533998296730',
-  whatsappDisplay: '(33) 99829-6730',
+  whatsapp: '5579981508326',
+  whatsappDisplay: '(79) 98150-8326',
   /** Instagram sem @ */
   instagram: 'byari.cookies',
   /** Link da loja no iFood */

@@ -73,7 +73,7 @@ Edite o arquivo `src/data/flavors.ts` e inclua um objeto no array `flavors`.
 
 No mesmo arquivo `src/data/flavors.ts`, atualize o objeto `brand`:
 
-- `whatsapp` — número com DDI (ex.: `5533998296730`)
+- `whatsapp` — número com DDI (ex.: `5579981508326`)
 - `whatsappDisplay` — como aparece no site
 - `instagram` — usuário sem `@`
 - `ifood` — link da loja
